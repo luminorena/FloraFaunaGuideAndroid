@@ -11,6 +11,9 @@
     <string name="menu_flowers">Цветы</string>
     <string name="menu_insects">Насекомые</string>
     <string name="menu_animals">Животные</string>
+    <string name="nav_others">Разное</string>
+    <string name="nav_recipes">Рецепты</string>
+    <string name="nav_advice">Советы</string>
 
 
 </resources>
