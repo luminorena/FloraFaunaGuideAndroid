@@ -7,31 +7,31 @@
         <item
             android:id="@+id/nav_mushrooms"
             android:icon="@android:drawable/star_big_on"
-            android:title="@string/menu_mushrooms" />
+            android:title="@string/mushrooms" />
         <item
             android:id="@+id/nav_flowers"
             android:icon="@android:drawable/btn_star_big_on"
-            android:title="@string/menu_flowers" />
+            android:title="@string/flowers" />
         <item
             android:id="@+id/nav_insects"
             android:icon="@android:drawable/btn_star_big_on"
-            android:title="@string/menu_insects" />
+            android:title="@string/insects" />
         <item
             android:id="@+id/nav_animals"
             android:icon="@android:drawable/btn_star_big_on"
-            android:title="@string/menu_animals" />
+            android:title="@string/animals" />
     </group>
 
-   <item android:title="@string/nav_others">
+   <item android:title="@string/others">
        <menu>
            <item
                android:id="@+id/nav_recipes"
                android:icon="@android:drawable/btn_star_big_on"
-               android:title="@string/nav_recipes" />
+               android:title="@string/recipes" />
            <item
                android:id="@+id/nav_advice"
                android:icon="@android:drawable/ic_menu_info_details"
-               android:title="@string/nav_advice" />
+               android:title="@string/advice" />
        </menu>
 
    </item>
