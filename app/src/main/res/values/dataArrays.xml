@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mushroomsArray">
+        <item>Лесички</item>
+        <item>Белые</item>
+    </string-array>
+
+    <string-array name="flowersArray">
+        <item>Розы</item>
+        <item>Мимозы</item>
+    </string-array>
+
+    <string-array name="insectsArray">
+        <item>Бабочки</item>
+        <item>Жуки</item>
+    </string-array>
+
+    <string-array name="animalsArray">
+        <item>Мыши</item>
+        <item>Парнокопытные</item>
+    </string-array>
+
+    <string-array name="recipesArray">
+        <item>Из тыквы</item>
+        <item>Из кабачков</item>
+    </string-array>
+
+    <string-array name="adviceArray">
+        <item>Как избавиться от колорадского жука</item>
+        <item>Лучшее время для посева</item>
+    </string-array>
+</resources>
