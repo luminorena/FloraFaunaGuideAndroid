@@ -21,8 +21,8 @@
     </string-array>
 
     <string-array name="recipesArray">
-        <item>Из тыквы</item>
-        <item>Из кабачков</item>
+        <item>Каша из тыквы на воде</item>
+        <item>Оладья из кабачков</item>
     </string-array>
 
     <string-array name="adviceArray">

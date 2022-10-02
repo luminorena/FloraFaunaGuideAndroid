@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         private String[] elementsArray;
         private ArrayAdapter<String> adapter;
         private Toolbar toolbar;
+        private int categoryIndex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +54,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(MainActivity.this, TextContentActivity.class);
+                intent.putExtra("category", categoryIndex);
+                intent.putExtra("position", i);
                 startActivity(intent);
+
             }
         });
     }
@@ -65,61 +69,37 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.nav_mushrooms) {
-            Toast.makeText(this, "Грибы", Toast.LENGTH_SHORT).show();
-            toolbar.setTitle(R.string.mushrooms);
-            elementsArray = getResources().getStringArray(R.array.mushroomsArray);
-            adapter.clear();
-            adapter.addAll(elementsArray);
-            adapter.notifyDataSetChanged();
+            fillArray("Грибы",R.string.mushrooms, R.array.mushroomsArray, 0);
         }
         else if (id == R.id.nav_flowers) {
-            Toast.makeText(this, "Цветы", Toast.LENGTH_SHORT).show();
-            toolbar.setTitle(R.string.flowers);
-            elementsArray = getResources().getStringArray(R.array.flowersArray);
-            adapter.clear();
-            adapter.addAll(elementsArray);
-            adapter.notifyDataSetChanged();
+            fillArray("Цветы", R.string.flowers, R.array.flowersArray, 1);
         }
         else if (id == R.id.nav_insects) {
-            Toast.makeText(this, "Насекомые", Toast.LENGTH_SHORT).show();
-            toolbar.setTitle(R.string.insects);
-            elementsArray = getResources().getStringArray(R.array.insectsArray);
-            adapter.clear();
-            adapter.addAll(elementsArray);
-            adapter.notifyDataSetChanged();
+            fillArray("Насекомые",R.string.insects, R.array.insectsArray,2);
         }
         else if (id == R.id.nav_animals) {
-            Toast.makeText(this, "Животные", Toast.LENGTH_SHORT).show();
-            toolbar.setTitle(R.string.animals);
-            elementsArray = getResources().getStringArray(R.array.animalsArray);
-            adapter.clear();
-            adapter.addAll(elementsArray);
-            adapter.notifyDataSetChanged();
+            fillArray("Животные",R.string.animals,R.array.animalsArray, 3);
         }
         else if (id == R.id.nav_recipes) {
-            Toast.makeText(this, "Рецепты", Toast.LENGTH_SHORT).show();
-            toolbar.setTitle(R.string.recipes);
-            elementsArray = getResources().getStringArray(R.array.recipesArray);
-            adapter.clear();
-            adapter.addAll(elementsArray);
-            adapter.notifyDataSetChanged();
+            fillArray("Рецепты",R.string.recipes,R.array.recipesArray, 4);
         }
-
         else if (id == R.id.nav_advice) {
-            Toast.makeText(this, "Советы", Toast.LENGTH_SHORT).show();
-            toolbar.setTitle(R.string.advice);
-            elementsArray = getResources().getStringArray(R.array.adviceArray);
-            adapter.clear();
-            adapter.addAll(elementsArray);
-            adapter.notifyDataSetChanged();
+            fillArray("Советы", R.string.advice, R.array.adviceArray, 5);
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    private void fillArray(String categoryText, int title, int arrayList, int index) {
+        Toast.makeText(this, categoryText, Toast.LENGTH_SHORT).show();
+        toolbar.setTitle(title);
+        elementsArray = getResources().getStringArray(arrayList);
+        adapter.clear();
+        adapter.addAll(elementsArray);
+        adapter.notifyDataSetChanged();
+        categoryIndex = index;
     }
 }
