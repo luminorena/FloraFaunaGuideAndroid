@@ -25,6 +25,8 @@ public class TextContentActivity extends AppCompatActivity {
     private int[] arrayImageAnimals = {R.drawable.mice, R.drawable.eventoed};
     private int[] arrayRecipes = {R.string.pupmkinporridge, R.string.marrowpancakes};
     private int[] arrayImageRecipes = {R.drawable.pumpkinporridge, R.drawable.marrowpancakes};
+    private int[] arrayImageAdvice = {R.drawable.potatobug, R.drawable.time_seeding};
+    private int[] arrayAdvice = {R.string.potatoBugElimination, R.string.bestTimeForSeeding};
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -60,6 +62,9 @@ public class TextContentActivity extends AppCompatActivity {
                 imageContent.setImageResource(arrayImageRecipes[position]);
                 textContent.setText(arrayRecipes[position]);
                 break;
+            case 5:
+                imageContent.setImageResource(arrayImageAdvice[position]);
+                textContent.setText(arrayAdvice[position]);
         }
 
     }
