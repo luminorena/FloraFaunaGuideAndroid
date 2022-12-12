@@ -9,24 +9,25 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Objects;
+
 public class TextContentActivity extends AppCompatActivity {
     private TextView textContent;
     private int category = 0;
     private int position = 0;
     private ImageView imageContent;
-    private Typeface typeFace;
-    private int []arrayMushrooms = {R.string.girolle, R.string.boletus};
-    private int[] arrayImageMushrooms = {R.drawable.girolle, R.drawable.boletus};
-    private int []arrayFlowers = {R.string.rose, R.string.mimosa};
-    private int []arrayImageFlowers = {R.drawable.rose, R.drawable.mimose};
-    private int[] arrayInsects = {R.string.butterflies, R.string.bugs};
-    private int[] arrayImageInsects = {R.drawable.butterflies, R.drawable.bugs};
-    private int [] arrayAnimals = {R.string.mice, R.string.eventoed};
-    private int[] arrayImageAnimals = {R.drawable.mice, R.drawable.eventoed};
-    private int[] arrayRecipes = {R.string.pupmkinporridge, R.string.marrowpancakes};
-    private int[] arrayImageRecipes = {R.drawable.pumpkinporridge, R.drawable.marrowpancakes};
-    private int[] arrayImageAdvice = {R.drawable.potatobug, R.drawable.time_seeding};
-    private int[] arrayAdvice = {R.string.potatoBugElimination, R.string.bestTimeForSeeding};
+    private final int []arrayMushrooms = {R.string.girolle, R.string.boletus};
+    private final int[] arrayImageMushrooms = {R.drawable.girolle, R.drawable.boletus};
+    private final int []arrayFlowers = {R.string.rose, R.string.mimosa};
+    private final int []arrayImageFlowers = {R.drawable.rose, R.drawable.mimose};
+    private final int[] arrayInsects = {R.string.butterflies, R.string.bugs};
+    private final int[] arrayImageInsects = {R.drawable.butterflies, R.drawable.bugs};
+    private final int [] arrayAnimals = {R.string.mice, R.string.eventoed};
+    private final int[] arrayImageAnimals = {R.drawable.mice, R.drawable.eventoed};
+    private final int[] arrayRecipes = {R.string.pupmkinporridge, R.string.marrowpancakes};
+    private final int[] arrayImageRecipes = {R.drawable.pumpkinporridge, R.drawable.marrowpancakes};
+    private final int[] arrayImageAdvice = {R.drawable.potatobug, R.drawable.time_seeding};
+    private final int[] arrayAdvice = {R.string.potatoBugElimination, R.string.bestTimeForSeeding};
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class TextContentActivity extends AppCompatActivity {
     }
     private void receiveIntent() {
         Intent intent = getIntent();
+        Objects.requireNonNull(getSupportActionBar()).hide();
         if (intent != null){
             category = intent.getIntExtra("category", 0);
             position = intent.getIntExtra("position", 0);
@@ -71,7 +73,7 @@ public class TextContentActivity extends AppCompatActivity {
     private void init() {
         textContent = findViewById(R.id.textMainContent);
         imageContent = findViewById(R.id.imageContent);
-        typeFace = Typeface.createFromAsset(this.getAssets(), "fonts/Roboto-Medium.ttf");
+        Typeface typeFace = Typeface.createFromAsset(this.getAssets(), "fonts/Roboto-Medium.ttf");
         textContent.setTypeface(typeFace);
 
     }
